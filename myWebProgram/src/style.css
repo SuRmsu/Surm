@@ -1,0 +1,155 @@
+* {
+    margin: 0;/*外边框为0*/
+    padding: 0;/*填充为0*/
+    box-sizing: border-box;/*内嵌窗口*/
+}/*全局标签都有的属性*/
+
+a {
+    text-decoration: none;/*a标签字体无任何装饰*/
+    transition: all .6s cubic-bezier(0.215, 0.610, 0.355, 1);/*标签变化效果变为持续*/
+}
+
+.container {
+    max-width: 1200px;/*定义元素的最大宽度*/
+    margin: 0 auto;
+    padding: 15px;
+}/*所有class为container的标签都有的属性*/
+
+.nav {
+    position: fixed;/*生成绝对定位的元素，相对于浏览器窗口进行定位*/
+    left: 0;/*定义了定位元素左外边距边界与其包含块左边界之间的便宜*/
+    top: 0;
+    right: 0;
+    transition: all .3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    background:linear-gradient(45deg,#3b372d,#1a1301);/*标题背景色渐变，360°格式往45deg方向，从黑变白*/
+
+}/*所有class为nav的标签都有的属性*/
+
+.nav > .container {
+    padding: 20px;
+    display: flex; /*弹性布局，横轴纵轴*/
+    justify-content: space-between;/*均匀排列，首个放起点，末个放终点*/
+    align-items: center;/*在纵轴上居中对齐*/
+}/*选择class为nav的一代class为container元素*/
+
+.nav.active {
+    background:linear-gradient(to bottom,#f3f2f1,#d1d1cf);/*这行是干嘛的？*/
+    box-shadow:0 4px 2px #1a1301; /*加了阴影？看不出来*/
+}/*.active把鼠标放上会改变外观*/
+
+.nav.active > .container > .left-logo a,.nav.active > .container > .nav-list li a{
+    color: #535455;
+}/*设置两类元素的颜色*/
+
+.nav > .container > .left-logo a {
+    color: #fff;
+    padding: 8px 12px;
+    letter-spacing: 2px;/*固定字符间距*/
+}
+
+.nav > .container > .nav-list {
+    list-style: none; /*一种标记的简写*/
+    display: flex;
+    justify-content: center; /*居中*/
+    align-items: center;
+}
+
+.nav > .container > .nav-list li a {
+    color: #fff;
+    margin:0 8px;
+}
+
+.nav > .container > .left-logo a:hover, .nav > .container > .nav-list li a:hover {
+    color: #e9543a;
+}/*hover选择器：选择所有鼠标指针浮动在上面的元素。*/
+
+.main {
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;/*cover和contain*/
+    background-image: url("./Resource/welcome.gif");
+    height: 100vh;
+    position: relative;
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-align: center;
+    z-index: -2;
+}
+
+.main > .container > h1 {
+    margin-bottom: 15px;
+    letter-spacing: 3px;
+    font-family: "幼圆","楷体";
+}
+
+.main > .container > p {
+    line-height: 1.5;
+    font-size: 15px;
+    text-indent: 2em;
+}
+
+.content h2{
+    font-size: 160%;
+    color: #535455;
+    letter-spacing: 1.2px;
+    counter-increment: articleOrder;
+ }
+
+.content h2::before {
+    content:counter(articleOrder);
+    width: 35px;
+    height: 35px;
+    display: inline-block;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 35px;
+    font-size: 18px;
+    color: #fff;
+    background: radial-gradient(circle at 5% 25%,#748ee2,#2a80c7);
+    margin-right: 10px;
+    vertical-align: text-top;
+ }
+
+ .content article {
+    margin: 1.2rem 0;
+ }
+
+ .content article p {
+    color: #232425;
+    line-height: 30px;
+    text-indent: 2em;
+    margin-bottom: 8px;
+ }
+
+@media (max-width:500px) {
+    .nav > .container > .nav-list{
+        position: absolute;
+        right: 0;
+        width: 0;
+        display: none;
+        background-color: #ffffff;
+        padding: 20px;
+        top: 70px;
+        transition: all 3s ease-out;
+    }
+    .nav > .container > .nav-list li a {
+        color: #535455;
+        width: 100%;
+        display: block;
+        margin: .8rem 0;
+    }
+ }
+
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+    background:linear-gradient(to bottom,#3b372d,#1a1301);
+}
+ ::-webkit-scrollbar-thumb {
+    width: 5px;
+    height: 5px;
+    background:linear-gradient(to bottom,#dfc689,#daa217);
+}
