@@ -23,6 +23,7 @@ a {
     transition: all .3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     background:linear-gradient(45deg,#3b372d,#1a1301);/*标题背景色渐变，360°格式往45deg方向，从黑变白*/
 
+
 }/*所有class为nav的标签都有的属性*/
 
 .nav > .container {
@@ -33,8 +34,8 @@ a {
 }/*选择class为nav的一代class为container元素*/
 
 .nav.active {
-    background:linear-gradient(to bottom,#f3f2f1,#d1d1cf);/*这行是干嘛的？*/
-    box-shadow:0 4px 2px #1a1301; /*加了阴影？看不出来*/
+    background:linear-gradient(to bottom,#f3f2f1,#d1d1cf);/*页面滑道最下时标题会变色*/
+    box-shadow:0 4px 2px #1a1301; /*加了阴影*/
 }/*.active把鼠标放上会改变外观*/
 
 .nav.active > .container > .left-logo a,.nav.active > .container > .nav-list li a{
@@ -64,19 +65,19 @@ a {
 }/*hover选择器：选择所有鼠标指针浮动在上面的元素。*/
 
 .main {
-    background-repeat: no-repeat;
+    background-repeat: no-repeat;/*只显示一次图片*/
     background-position: top center;
-    background-size: cover;/*cover和contain*/
+    background-size: cover;/*cover和contain 原始和扩展*/
     background-image: url("./Resource/welcome.gif");
-    height: 100vh;
+    height: 100vh;/*当前屏幕可见的100*/
     position: relative;
-    margin-bottom: 2rem;
+    margin-bottom: 2rem;/*下外边框*/
     display: flex;
     justify-content: center;
     align-items: center;
     color: #fff;
     text-align: center;
-    z-index: -2;
+    z-index: -2;/*设置堆叠顺序，有点像优先级*/
 }
 
 .main > .container > h1 {
@@ -86,7 +87,7 @@ a {
 }
 
 .main > .container > p {
-    line-height: 1.5;
+    line-height: 1.5;/*行高*/
     font-size: 15px;
     text-indent: 2em;
 }
@@ -95,7 +96,7 @@ a {
     font-size: 160%;
     color: #535455;
     letter-spacing: 1.2px;
-    counter-increment: articleOrder;
+    counter-increment: articleOrder;/*计数h2标签*/
  }
 
 .content h2::before {
@@ -110,8 +111,8 @@ a {
     color: #fff;
     background: radial-gradient(circle at 5% 25%,#748ee2,#2a80c7);
     margin-right: 10px;
-    vertical-align: text-top;
- }
+    vertical-align: text-top;/*垂直对齐方式：把元素的底端与父元素字体的底端对齐*/
+ }/*before: 在文本标签内容前面加上内容*/
 
  .content article {
     margin: 1.2rem 0;
@@ -141,15 +142,15 @@ a {
         display: block;
         margin: .8rem 0;
     }
- }
+ }/*@media：针对不同的媒体类型（也可以说是不同的屏幕尺寸）定义不同的样式*/
 
 ::-webkit-scrollbar {
     width: 10px;
     height: 10px;
     background:linear-gradient(to bottom,#3b372d,#1a1301);
-}
+}/*滚动条高宽及背景*/
  ::-webkit-scrollbar-thumb {
     width: 5px;
     height: 5px;
     background:linear-gradient(to bottom,#dfc689,#daa217);
-}
+}/*定义滑块 内阴影+圆角*/
