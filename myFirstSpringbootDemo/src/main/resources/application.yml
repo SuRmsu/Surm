@@ -2,6 +2,8 @@ server:
   port: 8080
   servlet:
     context-path: /demo
+# localhost:8080/demo/hello
+# localhost:8080/demo/hello
 spring:
   banner:
     charset: UTF-8
